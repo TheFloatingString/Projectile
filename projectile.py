@@ -21,16 +21,15 @@ percent_distance_var = 0.0  # percent_distance_var = percentage of the covered d
 max_distance_var = 0.0      # max_distance_var = maximum distance
 covered_distance_var = 0.0  # covered_distance_var = covered distance
 g = 9.80665                 # g = gravitational constant
-user_exit = False           # exit = checks to see if user wants to exit
 choice = 0                  # User's choice
 
 # DEFINE FUNCTIONS
 
 # Covered distance
 def covered_distance(theta_, velocity_, covered_distance_var_):   # Arguments: (theta, speed, covered_distance_var)
-    theta_*0.0174532925
-    velocity_*0.0174532925
-    covered_distance_var_ = 0.2041*((velocity_)**2)*sin(theta_)*cos(theta_) # Calculate 0.2041*((velocity)**2)*sin(theta)*cos(theta)
+    theta_ = theta_*0.0174532925
+    velocity= velocity_*0.0174532925
+    covered_distance_var_ = (2/g)*((velocity_)**2)*sin(theta_)*cos(theta_) # Calculate 0.2041*((velocity)**2)*sin(theta)*cos(theta)
     data = dict(dist = covered_distance_var_)
     print("Distance parcourue: \t {dist} mètres".format(**data))
     return covered_distance_var_         # Return covered_distance_var
@@ -44,7 +43,7 @@ def max_distance(velocity, max_distance_var):    # Arguments: (speed, max_distan
 
 # Percentage of maximum distance
 def percent_distance(theta, percent_distance_var):  # Arguments: (theta, percent_distance_var)
-    theta*0.0174532925
+    theta = theta*0.0174532925
     percent_distance_var = 100*(2*sin(theta)*cos(theta))  # Calculate 2*sin(theta)*cos(theta)
     data = dict(pourcentage = percent_distance_var)
     print("Pourcentage parcourue: \t {pourcentage}%".format(**data))
@@ -52,12 +51,12 @@ def percent_distance(theta, percent_distance_var):  # Arguments: (theta, percent
 
 def main():# Main method
     print("Ce logiciel permet de caluler des valeurs associées à la trajectoire d'une projectile \n \n")  # Display choices:
-    print("Vous pouvez taper: \n1 \t pour calculer la distance parcourue ")
-    print("2 \t pour calculer la distance maximale qui peut être parcourue")
-    print("3 \t pour calculer la pourcentage de la distance maximale qui est parcourue")
+    print("Vous pouvez taper: \n1 \t pour calculer la distance parcourue")
+    print("2 \t pour calculer la distance maximale qui peut être parcourue avec cette vitesse")
+    print("3 \t pour calculer la pourcentage de la distance maximale qui est parcourue avec cette angle")
     print("4 \t pour quitter ce logiciel")
 
-    while user_exit != True:   # While False:
+    while True:
         choice = input("\nChoix de l'usager: ") # Ask user for computation
         choice = int(choice)
 
