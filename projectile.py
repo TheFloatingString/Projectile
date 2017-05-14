@@ -13,13 +13,7 @@ from math import *          # Import all methods/attributes from math module
 import sys                  # Import sys.exit()
 
 # DECLARE VARIABLES
-theta = 0.0                 # theta = angle at which the projectile is launched
-velocity = 0.0              # velocity = speed of the projectile
-percent_distance_var = 0.0  # percent_distance_var = percentage of the covered distance
-max_distance_var = 0.0      # max_distance_var = maximum distance
-covered_distance_var = 0.0  # covered_distance_var = covered distance
 g = 9.80665                 # g = gravitational constant
-choice = 0                  # User's choice
 
 # DEFINE FUNCTIONS
 
