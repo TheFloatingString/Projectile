@@ -19,9 +19,7 @@ g = 9.80665                 # g = gravitational constant
 
 # Covered distance
 def covered_distance(theta_, velocity_):   # Arguments: (theta, speed, covered_distance_var)
-    theta_ = theta_*0.0174532925
-    velocity= velocity_*0.0174532925
-    covered_distance_var_ = (2/g)*((velocity_)**2)*sin(theta_)*cos(theta_) # Calculate 0.2041*((velocity)**2)*sin(theta)*cos(theta)
+    covered_distance_var_ = (2/g)*((velocity_)**2)*sin(radians(theta_))*cos(radians(theta_)) # Calculate 0.2041*((velocity)**2)*sin(theta)*cos(theta)
     return covered_distance_var_         # Return covered_distance_var
 
 # Maximum distance
@@ -31,8 +29,7 @@ def max_distance(velocity):    # Arguments: (speed, max_distance_var)
 
 # Percentage of maximum distance
 def percent_distance(theta):  # Arguments: (theta, percent_distance_var)
-    theta = theta*0.0174532925
-    percent_distance_var = 100*(2*sin(theta)*cos(theta))  # Calculate 2*sin(theta)*cos(theta)
+    percent_distance_var = 100*(2*sin(radians(theta))*cos(radians(theta)))  # Calculate 2*sin(theta)*cos(theta)
     return percent_distance_var                     # Return percent_distance_var
 
 # Asks user
@@ -41,8 +38,9 @@ def ask_values():
     velocity = float(input("Vitesse de la projectile (m/s): \t"))
     return theta, velocity
 
-def main():# Main method
-    print("Ce logiciel permet de caluler des valeurs associées à la trajectoire d'une projectile \n \n")  # Display choices:
+# Main function
+def main():
+    print("\nCe logiciel permet de caluler des valeurs associées à la trajectoire d'une projectile \n \n")  # Display choices:
     print("Vous pouvez taper: \nLa touche 'T' \t\t pour calculer la trajectoire de la projectile")
     print("Tout autre touche \t pour quitter ce logiciel\n")
 
